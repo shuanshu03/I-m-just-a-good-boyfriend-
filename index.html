@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Ilhum</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffd3e0, #c9f5ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      transition: background 1s ease;
+    }
+
+    .page {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      max-width: 600px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #ff5e7e;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff6b81;
+      color: white;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff4c66;
+    }
+
+    .footer {
+      margin-top: 20px;
+      color: #999;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page 1 -->
+  <div class="page active" id="page1">
+    <h1>Hi Ilhum...</h1>
+    <p>I know I messed up.<br>I hurt you, and it kills me inside.</p>
+    <button class="btn" onclick="nextPage(2)">Next</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="page" id="page2">
+    <h1>Please Forgive Me</h1>
+    <p>I know you're still mad...<br>But I need to say something from my heart.</p>
+    <button class="btn" onclick="nextPage(3)">Say it</button>
+  </div>
+
+  <!-- Page 3 -->
+  <div class="page" id="page3">
+    <h1>I'm Sorry, My Ilhum</h1>
+    <p>
+      🥺 I never wanted to hurt you.<br>
+      Seeing you sad breaks my heart.<br>
+      I'm truly sorry, from the deepest part of me.<br>
+      I will always love you, no matter what.<br>
+      Please forgive me, my love.
+    </p>
+    <div class="footer">— Your stupid boyfriend, Zuhan</div>
+  </div>
+
+  <script>
+    function nextPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page' + pageNum).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
